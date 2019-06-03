@@ -3,7 +3,7 @@ import routes from './app/http/routes';
 import databaseSetup from './config/database';
 import middlewares from './app/http/middlewares';
 import { applyMiddleware, applyRoutes } from './app/lib/generic-wrapper';
-import { errorHandler } from './app/http/middlewares/error-handlers';
+import errorHandler from './app/http/middlewares/error-handlers';
 
 class Server {
 
@@ -25,7 +25,7 @@ class Server {
     applyMiddleware(errorHandler, this.app);
   }
 
-  getRunningApplication() {
+  getRunningApplication(): express.Application {
     return this.app;
   }
 }
