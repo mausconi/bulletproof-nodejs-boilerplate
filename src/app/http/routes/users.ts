@@ -5,7 +5,7 @@ const userController = new UserController();
 
 export default [
   {
-    path: '/',
+    path: '/users',
     method: 'get',
     handler: [
       async (req: Request, res: Response) => {

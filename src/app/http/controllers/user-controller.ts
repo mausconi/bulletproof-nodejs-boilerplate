@@ -5,7 +5,12 @@ class UserController {
   }
 
   hello = async (req: Request, res: Response) => {
-    return res.status(200).send('I am UP !!!');
+    const user = {
+      name: 'myFullName',
+      age: 30,
+      company: 'IBM',
+    };
+    return res.status(200).send(JSON.stringify(user));
   }
 }
 
