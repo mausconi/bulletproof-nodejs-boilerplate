@@ -1,0 +1,16 @@
+module.exports = {
+  extends: [
+    'airbnb-base',
+    'plugin:jest/recommended',
+    'plugin:security/recommended',
+  ],
+  plugins: [
+    'security',
+    'import',
+    'jest',
+  ],
+  env: {
+    node: true,
+    'jest/globals': true,
+  },
+};

@@ -1,0 +1,9 @@
+# folders
+node_modules
+dist
+coverage
+
+# files
+yarn-error.log
+package-lock.json
+.env
