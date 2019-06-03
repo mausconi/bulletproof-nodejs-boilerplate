@@ -2,7 +2,7 @@ import * as winston from 'winston';
 import { appConfig } from './app-config';
 import * as fs from 'fs';
 
-const logDir: string = '../logs';
+const logDir: string = './logs';
 
 if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir);
@@ -10,7 +10,7 @@ if (!fs.existsSync(logDir)) {
 
 const options = {
   file: {
-    filename: `../logs/${appConfig.environment}.log`,
+    filename: `${logDir}/${appConfig.environment}.log`,
     handleExceptions: true,
     json: true,
     maxsize: 5242880, // 5MB
