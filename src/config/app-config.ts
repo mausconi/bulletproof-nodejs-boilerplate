@@ -1,4 +1,6 @@
 import * as dotenv from 'dotenv';
+import * as fs from 'fs-extra';
+import * as path from 'path';
 
 interface IConfig {
   port: number;
@@ -18,9 +20,12 @@ function nodeEnvSetting(): string {
   return 'development';
 }
 
-const nodeEnv: string = nodeEnvSetting();
+if (fs.existsSync(path.join(__dirname, '..', '..', '.env'))) {
+  console.log('Using .env file to supply config environment variables');
+  dotenv.config({ path: '.env' });
+}
 
-dotenv.config();
+const nodeEnv: string = nodeEnvSetting();
 
 const appConfig: IConfig = {
   port: Number(process.env.NODE_PORT || 3000),

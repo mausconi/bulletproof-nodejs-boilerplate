@@ -7,18 +7,8 @@ export const handleCors = (app: Application) =>
   app.use(cors({ credentials: true, origin: true }));
 
 export const handleBodyRequestParsing = (app: Application) => {
-  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
 };
 
 export const handleCompression = (app: Application) => app.use(compression());
-/*
-export const handleLogging = (app: Application) => {
-  app.use(morgan('combined', {
-    write (message: string, encoding: any) {
-      logger.debug(message);
-    },
-  },
-  ));
-};
-*/

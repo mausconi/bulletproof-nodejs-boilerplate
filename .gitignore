@@ -2,8 +2,13 @@
 node_modules
 dist
 coverage
+.idea/
+logs/
 
 # files
 yarn-error.log
+LICENCE
 package-lock.json
+yarn.lock
+.DS_STORE
 .env

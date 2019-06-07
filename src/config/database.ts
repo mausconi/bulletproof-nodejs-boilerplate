@@ -1,6 +1,6 @@
 import * as knex from 'knex';
 import { Model } from 'objection';
-import { knexConfig } from '../../knexfile';
+import knexConfig from '../../knexfile';
 import { appConfig } from './app-config';
 
 const databaseSetup = () => {

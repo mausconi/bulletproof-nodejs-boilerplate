@@ -8,15 +8,16 @@ if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir);
 }
 
-const options = {
+const options: any = {
   file: {
     filename: `${logDir}/${appConfig.environment}.log`,
     handleExceptions: true,
     json: true,
-    maxsize: 5242880, // 5MB
+    maxsize: 5242880,
     maxFiles: 5,
     colorize: false,
     format: winston.format.combine(
+      winston.format.label({ label: 'Bulletproof-NodeJs-Boilerplate' }),
       winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
     ),
   },
@@ -26,8 +27,12 @@ const options = {
     colorize: true,
     format: winston.format.combine(
       winston.format.colorize(),
-      winston.format.printf(
-        info => `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`)),
+      winston.format.label({ label: 'Bulletproof-NodeJs-Boilerplate' }),
+      winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+      winston.format.printf(({ level, message, label, timestamp }) => {
+        return `[${timestamp}]:[${level}] ${label} - ${message}`;
+      }),
+    ),
   },
 };
 

@@ -5,6 +5,7 @@
     "lib": ["es2017"],
     "outDir": "./dist",
     "rootDir": "src",
+    "sourceMap": true,
     "moduleResolution": "node",
     "noImplicitAny": true,
     "experimentalDecorators": true,

@@ -20,7 +20,6 @@ function onError(error: any) {
 
   const bind = `Pipe  ${PORT}`;
 
-  // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
       logger.error(`${bind} requires elevated privileges`);

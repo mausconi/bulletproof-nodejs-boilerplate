@@ -9,7 +9,16 @@ export default [
     method: 'get',
     handler: [
       async (req: Request, res: Response) => {
-        await userController.hello(req, res);
+        await userController.index(req, res);
+      },
+    ],
+  },
+  {
+    path: '/users/:id',
+    method: 'get',
+    handler: [
+      async (req: Request, res: Response) => {
+        await userController.show(req, res);
       },
     ],
   },
