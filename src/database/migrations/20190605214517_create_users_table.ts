@@ -10,10 +10,10 @@ export async function up(knex: Knex): Promise<any> {
     table.string('last_name', 100);
     table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
     table.timestamp('updated_at').notNullable().defaultTo(knex.fn.now());
-    table.timestamps(true, true);
+    table.timestamps(false, true);
   });
 }
 
 export async function down(knex: Knex): Promise<any> {
-  return knex.schema.dropTable('users');
+  return knex.schema.dropTableIfExists('users');
 }
