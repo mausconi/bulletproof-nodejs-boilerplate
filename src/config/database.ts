@@ -1,7 +1,8 @@
 import * as knex from 'knex';
 import { Model } from 'objection';
-import knexConfig from '../../knexfile';
 import { appConfig } from './app-config';
+
+const knexConfig = require('../../knexfile') as any;
 
 const databaseSetup = () => {
   const config = knexConfig[appConfig.environment];

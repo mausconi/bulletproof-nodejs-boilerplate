@@ -10,9 +10,9 @@
     "lint": "eslint src/**",
     "test": "NODE_ENV=test jest --no-cache --verbose",
     "coverage": "jest --collectCoverageFrom=src/**.js --coverage",
-    "db:make": "knex --knexfile src/database/knexfile.ts -x ts migrate:make",
-    "db:migrate": "knex --knexfile src/database/knexfile.ts migrate:latest",
-    "db:rb": "knex --knexfile src/database/knexfile.ts migrate:rollback"
+    "db:make": "knex --knexfile ./knexfile.ts -x ts migrate:make",
+    "db:migrate": "knex --knexfile ./knexfile.ts migrate:latest",
+    "db:rb": "knex --knexfile ./knexfile.ts migrate:rollback"
   },
   "dependencies": {
     "axios": "^0.18.0",

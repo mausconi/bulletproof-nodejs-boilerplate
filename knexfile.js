@@ -1,15 +1,14 @@
 // I only want migrations, rollbacks, and seeds to run when the NODE_ENV is specified
 // in the knex seed/migrate command. Knex will error out if it is not specified.
-import * as path from 'path';
+const path = require('path');
 
-require('dotenv').config();
-require('ts-node/register');
+require('dotenv').config({ path: '.env' });
 
 if (!process.env.NODE_ENV) { throw new Error('NODE_ENV not set'); }
 
 const BASE_PATH = path.join(__dirname, 'src', 'database');
 
-const knexConfig: any = {
+const knexConfig = {
   test: {
     client: 'pg',
     connection: {
@@ -68,4 +67,4 @@ const knexConfig: any = {
     timezone: 'UTC',
   },
 };
-export default knexConfig;
+module.exports = knexConfig;
