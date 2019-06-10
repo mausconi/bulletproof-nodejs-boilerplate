@@ -16,7 +16,7 @@ const knexConfig = {
       port: Number(process.env.DB_PORT || 5432),
       user: process.env.DB_USER || 'postgresql',
       password: process.env.DB_PASSWORD,
-      database: `${process.env.DB_DATABASE}_testing`,
+      database: `${process.env.DB_DATABASE}_test`,
       charset: 'utf8mb4',
       collate: 'utf8mb4_unicode_ci',
       max: 10,
